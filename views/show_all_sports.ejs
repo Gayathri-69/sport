@@ -1,0 +1,35 @@
+<section>
+    <% if(check_admin_are_not){ %>
+    <div class="button" style="width: 100%; text-align: right; margin-right: 15%">
+      <button
+        class="my-4"
+        id="createSportBtn"
+        onclick="window.location.href='/add_sports'"
+      >
+        CREATE SPORT
+      </button>
+    </div>
+    <%}%> <% if(data.length!=0){%>
+    <p style="width: 70%" class="fw-bold h3 text-white my-4">
+      Available Sports #<%= data.length%>
+    </p>
+    <%}%> <% if(data.length==0){%>
+    <h1
+      style="
+        color: red;
+        font-weight: 900;
+        font-family: 'Times New Roman', Times, serif;
+      "
+    >
+      No sport has been added,Yet!
+    </h1>
+    <%}%> <% for(var i=0; i < data.length; i++) { %>
+    <div>
+      <div
+        onclick="window.location.href='/all_session/:<%= data[i].id %>/:<%= data[i].sports_name %>'"
+      >
+        <p><%= data[i].sports_name %></p>
+      </div>
+    </div>
+    <%}%>
+  </section>
