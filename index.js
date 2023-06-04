@@ -1,8 +1,11 @@
-/* eslint-disable space-before-function-paren */
 /* eslint-disable semi */
-/* eslint-disable indent */
+/* eslint-disable arrow-spacing */
+/* eslint-disable comma-spacing */
 /* eslint-disable quotes */
-function hello () {
-    console.log("Hello node.js");
-}
-hello();
+/* eslint-disable eol-last */
+
+const app = require("./app")
+
+app.listen(4000, () => {
+  console.log("Started express server at port 4000");
+});
